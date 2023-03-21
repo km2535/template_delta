@@ -1,0 +1,54 @@
+.content,.mainMenuContent{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mainMenuContent{
+  border-bottom: 4px solid #000;
+}
+.list, .all{
+  margin: 30px 40px;
+  font-size: 22px;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.allListContainer,.allListHidden{
+  width: 100%;
+  background-color: #000;
+  overflow: hidden;
+}
+.allListContent,.allListContentHidden{
+  margin: 0 10%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.allListContent{
+  margin-bottom: 0px;
+  transition: all .5s;
+}
+.allListContentHidden{
+  margin-bottom: -50px;
+  transition: all .5s;
+}
+.allList{
+  width: 20%;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  color: #fff;
+}
+.allList:hover{
+  text-decoration: underline;
+  color: #f00;
+}

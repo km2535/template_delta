@@ -5,6 +5,8 @@ import App from './App';
 import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router';
 import LandingPage from './pages/landingPage/LandingPage';
+import Login from './pages/login/Login';
+import Prodcuts from './pages/products/Prodcuts';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         element:<LandingPage/>
+      },
+      {
+        path: "/login",
+        element: <Login/>
+      },
+      {
+        path: "/product/:id",
+        element: <Prodcuts/>
       }
     ]
   },

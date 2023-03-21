@@ -1,0 +1,12 @@
+.content{
+  width: 33%;
+}
+.ul{
+  list-style: none;
+  display: flex;
+}
+.li{
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}

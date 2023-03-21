@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {FiSearch} from "react-icons/fi"
+import styles from "./Search.module.css"
 
 export default function Search() {
   const [newText, setNewText] = useState<Object>({});
@@ -14,11 +15,13 @@ export default function Search() {
     console.log(newText);
   }
   return (
-    <div>
-      <input type="text" onChange={searchText}/>
-      <button onClick={searchHandler}>
-        <FiSearch/>
-      </button>
+    <div className={styles.content}>
+      <div className={styles.inputContent}>
+        <input className={styles.input} type="text" onChange={searchText}/>
+        <button className={styles.btn} onClick={searchHandler}>
+          <FiSearch/>
+        </button>
+      </div>
     </div>
   );
 }
