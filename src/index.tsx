@@ -7,6 +7,7 @@ import { RouterProvider } from 'react-router';
 import LandingPage from './pages/landingPage/LandingPage';
 import Login from './pages/login/Login';
 import Prodcuts from './pages/products/Prodcuts';
+import Qna from './pages/qna/Qna';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login/>
+      },
+      {
+        path: "/qna",
+        element: <Qna/>
       },
       {
         path: "/product/:id",

@@ -13,13 +13,13 @@ export default function Comm() {
       <div className={styles.icons} onClick={menuHandler}><BsChatDots /></div>
       <menu className={menuActive ? styles.itemsWrapper : styles.itemsWrapperHidden}>
         <div className={styles.item}>
-          <Qna imgUrl={`${process.env.REACT_APP_IMAGE_URL}/kakaoTalk.png`} serviceName='kakaoTalk' serviceUrl='serviceUrl' />
+          <Qna imgUrl={`${process.env.REACT_APP_IMAGE_URL}/kakaoTalk.png`} serviceName='kakaoTalk' serviceUrl={`${process.env.REACT_APP_KAKAO_CHANNEL_LINK}`} />
         </div>
         <div className={styles.item}>
-          <Qna imgUrl={`${process.env.REACT_APP_IMAGE_URL}/naverTalk.png`} serviceName='naverTalk' serviceUrl='serviceUrl' />
+          <Qna imgUrl={`${process.env.REACT_APP_IMAGE_URL}/naverTalk.png`} serviceName='naverTalk' serviceUrl={`${process.env.REACT_APP_NAVER_TALKTALK_LINK}`} />
         </div>
         <div className={styles.item}>
-          <Qna imgUrl={`${process.env.REACT_APP_IMAGE_URL}/qnaTallk.png`} serviceName='qnaTallk' serviceUrl='serviceUrl' />
+          <Qna imgUrl={`${process.env.REACT_APP_IMAGE_URL}/qnaTalk.png`} serviceName='qnaTalk' serviceUrl={`${process.env.REACT_APP_QNA_URL}`} />
         </div>
       </menu>
     </div>

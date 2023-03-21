@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from "./Qna.module.css"
 
 type propsQnaIcon = {
@@ -6,12 +7,23 @@ type propsQnaIcon = {
   serviceUrl : string,
   serviceName: string
 }
-export default function Qna({imgUrl, serviceName,serviceUrl} : propsQnaIcon ) {
+export default function Qna({ imgUrl, serviceName, serviceUrl }: propsQnaIcon) {
+  const navigate = useNavigate();
 
   return (
-    <div className={styles.container}>
-      <img className={styles.img} src={imgUrl} alt={serviceName} />
-    </div>
+    <>
+    {
+        serviceName.includes('qnaTalk') ?
+          <div className={styles.container} onClick={() => navigate(serviceUrl)}>
+            <img className={styles.img} src={imgUrl} alt={serviceName} />
+          </div>
+          :
+          <a className={styles.container} href={serviceUrl} target="_blank" rel="noreferrer" >
+            <img className={styles.img} src={imgUrl} alt={serviceName} />
+          </a>
+    }
+    
+    </>
   );
 }
 
