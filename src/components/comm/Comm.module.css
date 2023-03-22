@@ -1,7 +1,13 @@
-.container,.containerActive{
+
+.positionFix .container, .positionFix .containerActive{
   position: fixed;
   bottom: 1em;
   right: 1em;
+}
+.positionRelative .container, .positionRelative .containerActive{
+  position: relative;
+  bottom: 1em;
+  right: 1.6em;
 }
 .container:after, .containerActive:after {
   display: block;
@@ -39,7 +45,7 @@
 }
 .itemsWrapper{
   padding: 0;
-  margin: 0;
+  /* margin: 0; */
 }
 .item{
   position: absolute;
@@ -56,6 +62,9 @@
   text-align: center;
   line-height: 3;
   transition: transform .3s ease, background .2s ease, scale .2s;
+}
+.positionRelative .item{
+  top: -59px;
 }
 .containerActive>.itemsWrapper>.item{
   z-index: 6;
@@ -74,4 +83,15 @@
 }
 .containerActive>.itemsWrapper>.item:nth-child(3){
   transform: translate3d(-7.5em,-1.2em,0);
+}
+
+.positionRelative .containerActive>.itemsWrapper>.item:nth-child(1){
+  transform: translate3d(-1em,-8em,0);
+}
+
+.positionRelative .containerActive>.itemsWrapper>.item:nth-child(2){
+  transform: translate3d(-6em,-5em,0);
+}
+.positionRelative .containerActive>.itemsWrapper>.item:nth-child(3){
+  transform: translate3d(-7.5em, 0em,0);
 }

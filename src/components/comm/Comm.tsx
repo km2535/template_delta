@@ -3,12 +3,13 @@ import Qna from './qna/Qna';
 import styles from "./Comm.module.css"
 import {BsChatDots} from "react-icons/bs"
 
-export default function Comm() {
+export default function Comm({commFix} : {commFix:boolean}) {
   const [menuActive, setMenuActive] = useState(false);
   const menuHandler = () => {
     setMenuActive((prev) => !prev);
   }
   return (
+    <div className={commFix ? styles.positionRelative : styles.positionFix}>
     <div className={menuActive ? styles.containerActive : styles.container}>
       <div className={styles.icons} onClick={menuHandler}><BsChatDots /></div>
       <menu className={menuActive ? styles.itemsWrapper : styles.itemsWrapperHidden}>
@@ -22,6 +23,7 @@ export default function Comm() {
           <Qna imgUrl={`${process.env.REACT_APP_IMAGE_URL}/qnaTalk.png`} serviceName='qnaTalk' serviceUrl={`${process.env.REACT_APP_QNA_URL}`} />
         </div>
       </menu>
+    </div>
     </div>
   );
 }

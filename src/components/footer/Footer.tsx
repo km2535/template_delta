@@ -1,25 +1,26 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import {SiInstagram, SiNaver} from "react-icons/si"
 import {AiOutlineFacebook} from "react-icons/ai"
 import styles from "./Footer.module.css"
 
-export default function Footer() {
-  const navigate = useNavigate();
+
+export default function Footer({setCommFix} : {setCommFix:Function}) {
+  // const navigate = useNavigate();
   useEffect(() => {
     const footer = document.getElementById("footer");
     const showTitle = new IntersectionObserver(
       (entries) => {
         // 푸터가 보이면 state를 변경하여 comm 요소가 fix에서 relative로 position 변경하도록 함.
-        console.log(entries)
+         entries.forEach((ent) => setCommFix(ent.isIntersecting));
       },
       {
-        rootMargin: "0px",
-        threshold: 0.5,
+        // rootMargin: "0px",
+        // threshold: 0,
       }
     );
     footer && showTitle.observe(footer);
-  }, []);
+  }, [setCommFix]);
   return (
     <div className={styles.container} id="footer">
       <div className={styles.topInfo}>
@@ -66,7 +67,7 @@ export default function Footer() {
           />
         </div>
         <div className={styles.Info}>
-          <div className={styles.company}>민스필라테스</div>
+          {/* <div className={styles.company}>민스필라테스</div> */}
           <div className={styles.addr}>
             서울특별시 중랑구 00로 000-00 민빌딩 | 대표이사 이강민
           </div>
@@ -78,34 +79,34 @@ export default function Footer() {
           <div className={styles.subNabar}>
             <div
               className={styles.menu1}
-              onClick={() => navigate(`${process.env.REACT_APP_API_SUB_URL}`)}
+              // onClick={() => navigate(`${process.env.REACT_APP_API_SUB_URL}`)}
             >
-              회사소개
+              주문내역
             </div>
             <div
               className={styles.menu2}
-              onClick={() =>
-                navigate(`${process.env.REACT_APP_API_SUB_OPTION_FIVE_URL}`)
-              }
+              // onClick={() =>
+              //   navigate(`${process.env.REACT_APP_API_SUB_OPTION_FIVE_URL}`)
+              // }
             >
-              고객센터
+              장바구니
             </div>
             <div
               className={styles.menu3}
-              onClick={() =>
-                navigate(`${process.env.REACT_APP_API_SUB_OPTION_ONE_URL}`)
-              }
+              // onClick={() =>
+              //   navigate(`${process.env.REACT_APP_API_SUB_OPTION_ONE_URL}`)
+              // }
             >
-              찾아오시는 길
+              쿠폰내역
             </div>
-            <div
+            {/* <div
               className={styles.menu4}
               onClick={() =>
                 navigate(`${process.env.REACT_APP_API_SUB_OPTION_THREE_URL}`)
               }
             >
               서비스 제공
-            </div>
+            </div> */}
           </div>
           <div className={styles.snsContainer}>
             <div className={styles.instar}>

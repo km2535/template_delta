@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {Outlet} from "react-router-dom"
 import Header from './components/header/Header';
@@ -6,6 +6,7 @@ import Comm from './components/comm/Comm';
 import Footer from './components/footer/Footer';
 
 function App() {
+  const [commFix, setCommFix] = useState(false); 
 
   return (
     <div className="App">
@@ -13,8 +14,8 @@ function App() {
       <div className="outlet">
         <Outlet />
       </div>
-      <Comm />
-      <Footer/>
+      <Comm commFix={commFix} />
+      <Footer setCommFix={setCommFix}/>
     </div>
   );
 }

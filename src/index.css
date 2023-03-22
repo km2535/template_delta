@@ -18,10 +18,10 @@ html::-webkit-scrollbar{
   width: 10px;
 }
 html::-webkit-scrollbar-track{
-  background-color: #e3f1ff;
+  background-color: #ffffff;
 }
 html::-webkit-scrollbar-thumb{
-  background-color: #45687f;
+  background-color: #393939;
   border-radius: 10px;
 }
 body{
@@ -54,6 +54,7 @@ code {
   --main-font-disabled-color: #6d737a;
   --main-font-strong-color: #e10505;
   --main-font-bg-color : #BFCAD6;
+  --black-font-bg-color : #000;
   --navi-white-color : #2F485855;
   --main-kr-font : 'Noto Sans KR', sans-serif;
   --main-eg-font : 'Rubik', sans-serif;
