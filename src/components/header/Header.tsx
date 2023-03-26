@@ -8,7 +8,7 @@ import styles from "./Header.module.css"
 
 export default function Header() {
   // 데이터와 통신하여 메뉴의 갯수를 navbar로 전달한다.
-  const [navbarMenu, setNavbarMenu] = useState<Object>({});
+  const [navbarMenu, setNavbarMenu] = useState<Object[]>([]);
 
   useEffect(() => {
     NavbarMenu(setNavbarMenu)

@@ -1,4 +1,4 @@
-export const NavbarMenu = async (setNavbarMenu:React.Dispatch<React.SetStateAction<Object>>) => {
+export const NavbarMenu = async (setNavbarMenu:React.Dispatch<React.SetStateAction<Object[]>>) => {
   fetch(`${process.env.REACT_APP_FETCH_URL}/navbar/readNavbar.php`, {
     method: "POST",
   })
