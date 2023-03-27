@@ -52,6 +52,7 @@ code {
 :root{
   --main-font-color : #2F4858;
   --main-font-disabled-color: #6d737a;
+  --main-font-gray-color: #a8a8a8;
   --main-font-strong-color: #e10505;
   --main-font-bg-color : #BFCAD6;
   --black-font-bg-color : #000;

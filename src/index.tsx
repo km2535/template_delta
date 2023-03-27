@@ -8,6 +8,7 @@ import LandingPage from './pages/landingPage/LandingPage';
 import Login from './pages/login/Login';
 import Prodcuts from './pages/products/Prodcuts';
 import Qna from './pages/qna/Qna';
+import Item from './pages/item/Item';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <Prodcuts/>
+      },
+      {
+        path: "/item/:id",
+        element: <Item/>
       }
     ]
   },

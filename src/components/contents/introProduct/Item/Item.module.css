@@ -1,0 +1,58 @@
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.imgContent:hover{
+  overflow: hidden;
+  border: 1px solid var(--main-font-gray-color);
+}
+.imgContent{
+  display: flex;
+  border: 1px solid transparent;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 300px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.img{
+  width: 100%;
+  height: 95%;
+}
+.describe{
+  margin-top: 10px;
+  text-align: left;
+  font-family: var(--main-kr-font);
+}
+.category{
+  font-size: 13px;
+  color: var(--main-font-disabled-color);
+  display: flex;
+}
+.cate:nth-child(1)::after,.cate:nth-child(2)::after{
+  content: ">";
+  margin: 0 5px;
+}
+.title{
+  font-size: 18px;
+}
+.price::after,.price{
+  font-size: 14px;
+}
+.price::after{
+  content: "원";
+}
+.likeContent{
+  display: flex;
+  justify-content: flex-end;
+}
+.icon{
+  color: var(--main-font-disabled-color);
+  margin-right: 20px;
+  cursor: pointer;
+}
+.icon:hover{
+  color: var(--main-font-strong-color);
+}

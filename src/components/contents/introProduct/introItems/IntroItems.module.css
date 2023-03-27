@@ -1,0 +1,12 @@
+.container{
+  margin: 20px 0;
+}
+.img{
+  display: flex;
+}
+.title{
+  text-align: left;
+  font-family: var(--main-kr-font);
+  font-size: 30px;
+  font-weight: 600;
+}
