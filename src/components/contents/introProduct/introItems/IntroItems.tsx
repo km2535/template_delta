@@ -50,8 +50,8 @@ export default function IntroItems({ option }: { option: optionsType }) {
           },
         }}>
           {item.map((value) =>
-            <SwiperSlide>
-              <Item key={uuid()} value={value} />
+            <SwiperSlide key={uuid()}>
+              <Item value={value} />
             </SwiperSlide>
           )}
         </Swiper>

@@ -24,3 +24,13 @@ export interface optionsType {
   LIST_COUNT: string,
   TITLE: string
 }
+
+export interface textOption {
+  "font-size" ?: string, 
+  "font-weight" ?: string, 
+  "font-style" ?: string, 
+  "text-align" ?: string, 
+  "text"?: string,
+  "IMG"?: boolean,
+  "IMG_URL"?:string
+}

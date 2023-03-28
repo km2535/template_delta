@@ -10,7 +10,7 @@ export default function Item({ value }: { value: ItemsTypes }) {
   return (
     <div className={styles.container}>
       <div className={styles.imgContent}>
-        <img className={styles.img} src={`${process.env.REACT_APP_API_URL}/data/items/${value.ID}/${value.IMG_URL}`} alt="상품이미지" onClick={()=>navigate(`${process.env.REACT_APP_ITEM_URL}/${value.ID}`)}/>
+        <img className={styles.img} src={`${process.env.REACT_APP_API_URL}/data/items/thumb/${value.ID}/${value.IMG_URL}`} alt="상품이미지" onClick={()=>navigate(`${process.env.REACT_APP_ITEM_URL}/${value.ID}`, {state : value})}/>
       </div>
       <div className={styles.describe}>
         
