@@ -1,0 +1,21 @@
+.btnBlack{
+  color: var(--white-font-bg-color);
+  background-color: var(--btn-dark-color);
+}
+.btnBlack:hover{
+  background-color: var(--btn-hover-dark-color);
+}
+.btnGray{
+  background-color: var(--btn-light-color);
+}
+.btnGray:hover{
+  background-color: var(--btn-hover-light-color);
+}
+.btnBlack,.btnGray{
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  font-weight: 600;
+}

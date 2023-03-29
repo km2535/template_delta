@@ -14,6 +14,7 @@ export default interface ItemsTypes {
     INFO: string,
     MORE_INFO: string,
     IMG_URL: string,
+    THUMB: string,
     LIKE: string,
     DATE: string
 }
