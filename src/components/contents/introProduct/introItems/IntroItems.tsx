@@ -20,6 +20,7 @@ export default function IntroItems({ option }: { option: optionsType }) {
         break;
     
       default:
+        console.log('일반')
         // 일반 카테고리 별 정렬
         break;
     }

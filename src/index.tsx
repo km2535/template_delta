@@ -6,7 +6,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router';
 import LandingPage from './pages/landingPage/LandingPage';
 import Login from './pages/login/Login';
-import Prodcuts from './pages/products/Prodcuts';
+import Prodcuts from './pages/products/Products';
 import Qna from './pages/qna/Qna';
 import ItemDetail from './pages/itemDetail/ItemDetail';
 
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/product/:id",
-        element: <Prodcuts/>
+        element: <Prodcuts />
       },
       {
         path: "/item/:id",

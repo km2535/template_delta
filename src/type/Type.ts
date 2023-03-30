@@ -35,3 +35,11 @@ export interface textOption {
   "IMG"?: boolean,
   "IMG_URL"?:string
 }
+
+export interface navbar {
+  id?: string,
+  listName?:string
+}
+export interface navbarMenu {
+  navbarMenu : navbar[]
+}

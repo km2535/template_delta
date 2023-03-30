@@ -1,0 +1,9 @@
+.container{
+  width: 100%;
+  line-height: 50vh;
+  min-width: 1300px;
+  text-align: center;
+  font-size: 30px;
+  font-family: var(--main-kr-font);
+  font-weight: 600;
+}

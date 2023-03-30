@@ -2,15 +2,10 @@ import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from "./Navbar.module.css"
 import {AiOutlinePlusSquare} from "react-icons/ai"
+import {  navbarMenu } from '../../../type/Type';
 
-type navbar = {
-  id?: string,
-  listName?:string
-}
-type navbarMenu = {
-  navbarMenu : navbar[]
-}
-export default function Navbar({ navbarMenu }: navbarMenu) {
+
+export default function Navbar( {navbarMenu} : navbarMenu) {
   const navigate = useNavigate();
   const [isAllMenu, setIsAllMenu] = useState(false);
   const allMenuClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
