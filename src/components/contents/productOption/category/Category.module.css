@@ -1,0 +1,40 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+.plusBtn{
+ cursor: pointer;
+}
+.title{
+  font-family: var(--main-kr-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.line{
+  width: 60%;
+  margin: 10px auto;
+  border-bottom: 1px solid #D0CFCF;
+}
+.listContainer{
+  list-style: none;
+  width: 48%;
+  margin: 0 auto;
+}
+.list{
+  font-family: var(--main-kr-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+  line-height: 22px;
+  color: #898989;
+  cursor: pointer;
+}

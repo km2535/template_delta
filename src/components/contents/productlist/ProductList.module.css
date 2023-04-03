@@ -1,15 +1,12 @@
 .container{
-  margin: 20px 0;
-  width: 80%;
   max-width: 1300px;
-  margin: 0 auto;
+  min-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
 }
 .img{
-  display: flex;
-}
-.title{
-  text-align: left;
-  font-family: var(--main-kr-font);
-  font-size: 30px;
-  font-weight: 600;
+  width:21%;  
 }
