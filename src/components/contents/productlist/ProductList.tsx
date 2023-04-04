@@ -20,8 +20,8 @@ export default function ProductList({ param,lists, setLists }: { param: Readonly
       {lists.length > 0 || <NoProduct/>}
     <div className={styles.container}>
           {lists.map((value) => 
-            <div className={styles.img}>
-              <Item value={value} key={uuid()} />
+            <div className={styles.img} key={uuid()}>
+              <Item value={value}  />
             </div>
         )}
     </div>

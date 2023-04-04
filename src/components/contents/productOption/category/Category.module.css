@@ -38,3 +38,11 @@
   color: #898989;
   cursor: pointer;
 }
+.listContainer{
+  height: auto;
+  overflow: hidden;
+}
+.none{
+  height: 0;
+  overflow: hidden;
+}

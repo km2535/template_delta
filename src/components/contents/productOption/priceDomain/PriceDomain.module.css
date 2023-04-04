@@ -1,5 +1,6 @@
 .input[type=range] {
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
+  appearance: none;
   width: 50%; 
   background: transparent; 
 }
@@ -122,4 +123,12 @@
 .info{
   font-size: 14px;
   color: #898989;
+}
+.inputContainer{
+  height: auto;
+  overflow: hidden;
+}
+.none{
+  height: 0;
+  overflow: hidden;
 }

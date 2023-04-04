@@ -14,7 +14,7 @@ export default function Products() {
   return (
     <div className={styles.container}>
       <div className={styles.options}>
-        <ProductOption setLists={setLists} />
+        <ProductOption setLists={setLists} param={param} />
       </div>
       <div className={styles.lists}>
         <ProductList param={param} lists={lists} setLists={setLists} />
