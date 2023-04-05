@@ -28,10 +28,10 @@ export default function ProductOption({ setLists, param }: { setLists: React.Dis
       </div>
       <div className={styles.btnContainer}>
         <div className={styles.btn}>
-          <Button main={true} onClick={serchHandler} text='검색' />
+          <Button main={true} onClick={serchHandler} text='검색' fontsize='22' />
         </div>
         <div>
-          <Button main={false} onClick={initHander} text='초기화' />
+          <Button main={false} onClick={initHander} text='초기화' fontsize='22' />
         </div>
       </div>
     </div>

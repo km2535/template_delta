@@ -9,6 +9,8 @@ import Login from './pages/login/Login';
 import Prodcuts from './pages/products/Products';
 import Qna from './pages/qna/Qna';
 import ItemDetail from './pages/itemDetail/ItemDetail';
+import MyPage from './pages/mypage/MyPage';
+import ProtectPage from './components/protectPage/ProtectPage';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login/>
+      },
+      {
+        path: "/myinfo",
+        element: <ProtectPage requireAdmin={false}><MyPage/></ProtectPage>
       },
       {
         path: "/qna",
