@@ -1,19 +1,25 @@
-import React, {  useState } from 'react';
+import React, {  useRef, useState } from 'react';
 import { useAuthContext } from '../../context/AuthContextProvider';
 import Button from '../../components/ui/button/Button';
 import IndividualView from './individual/IndividualView';
 import styles from './MyPage.module.css'
 import Market from './market/Market';
+import daumPosts from '../../api/juso/Juso';
+import { UserInfo } from '../../api/user/user';
 
-export default function MyPage() {
-  const user = useAuthContext();
-  const [agree1, setAgree1] = useState<boolean>(false)
-  const [agree2, setAgree2] = useState<boolean>(false)
-  const [market, setMarket] = useState<boolean>(false)
-  const [individual, setindividual] = useState<boolean>(false)
+
+ export default function MyPage() {
+  const {user} = useAuthContext();
+  const addr1Ref = useRef<HTMLInputElement>(null);
+  const addr2Ref = useRef<HTMLInputElement>(null);
+  const addr3Ref = useRef<HTMLInputElement>(null);
+  const [agree1, setAgree1] = useState<boolean>(false);
+  const [agree2, setAgree2] = useState<boolean>(false);
+  const [market, setMarket] = useState<boolean>(false);
+  const [individual, setindividual] = useState<boolean>(false);
   const [phone, setPhone] = useState<string>("");
 
-  const allAgree = (e : React.ChangeEvent<HTMLInputElement>) => {
+  const allAgree = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAgree1(e.currentTarget.checked);
     setAgree2(e.currentTarget.checked);
   }
@@ -29,14 +35,30 @@ export default function MyPage() {
   const individualInfo = () => {
     setindividual((prev)=>!prev)
   }
-  const addressSearch = () => {
-    
-  }
   const phoneNumber = (e : React.ChangeEvent<HTMLInputElement>) => {
     setPhone(e.currentTarget.value)
   }
   const saveMyInfo = () => {
-   console.log(user?.email, user?.name,agree1,agree2,phone) 
+    const addr1 = addr1Ref.current?.value;
+    const addr2 = addr2Ref.current?.value;
+    const addr3 = addr3Ref.current?.value;
+    const savePackage = {
+      "name":user?.name || "홍길동",
+      "email":user?.email || "없음",
+      "agreeIndividual":agree1,
+      "agreeMarketing":agree2,
+      "phone":phone,
+      "zipcode":addr1 || "",
+      "detailAddress":addr2 || "",
+      "addAddress":addr3 || "",
+    }
+    UserInfo(savePackage);
+  }
+
+  const deleteMyInfo = () => {
+    if (window.confirm("정말삭제하시겠습니까?")) {
+      console.log("삭제")
+    }
   }
   return (
     <div className={styles.container}>
@@ -61,19 +83,19 @@ export default function MyPage() {
           <div className={styles.subInfoTitle}>배송지 정보</div>
           <div className={styles.inputAddr}>
             <div className={styles.addrContent1}>
-              <input type="text" className={styles.addr1}/>
+              <input type="text" className={styles.addr1} id='addr1' ref={addr1Ref} readOnly/>
             </div>
             <div className={styles.addrContent2}>
-              <input type="text" className={styles.addr2}/>
+              <input type="text" className={styles.addr2} id='addr2'  ref={addr2Ref} readOnly/>
             </div>
             <div className={styles.addrContent3}>
-              <input type="text" className={styles.addr3}/>
+              <input type="text" className={styles.addr3} id='addr3' ref={addr3Ref}/>
             </div>
           </div>
         </div>
         <div className={styles.addrBtn}>
           <div className={styles.BtnContent}>
-            <Button fontsize='16' text='주소검색' onClick={addressSearch} main={false} />
+            <Button fontsize='16' text='주소검색' onClick={daumPosts} main={false} />
           </div>
         </div>
         <div className={styles.phoneNum}>
@@ -117,6 +139,9 @@ export default function MyPage() {
       <div className={styles.Btn}>
         <div className={styles.saveBtn}>
           <Button fontsize='16' main text='저장하기' onClick={saveMyInfo}/>
+        </div>
+        <div className={styles.saveBtn}>
+          <Button fontsize='16' main={false} text='탈퇴하기' onClick={deleteMyInfo}/>
         </div>
         <div className={styles.line}></div>
         <div className={styles.addInfo}>※모든 개인정보는 회원탈퇴 시 지체없이 파기됩니다.</div>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { useContext, createContext, useState, useEffect } from "react";
 import { googleLogin } from '../api/login/googleLogin';
-import { user } from '../type/Type';
+import { users } from '../type/Type';
 
-const AuthContext = createContext<user|undefined>(undefined);
+
+const AuthContext = createContext({user : {id:"",email:"",name:"",picture:"",IsAdmin:false},setUser : (user:users)=>{}});
 
 export default function AuthContextProvider({ children } :{children:React.ReactNode}) {
-  const [user, setUser] = useState<user>();
+  const [user, setUser] = useState<users>({id:"",email:"",name:"",picture:"",IsAdmin:false});
   const [googleAccess, setGoogleAccess] = useState<string>("");
   // const [kakaoAccess, setKakaoAccess] = useState<string>("");
   // const [naverAccess, setNaverAccess] = useState<string>("");
@@ -25,7 +26,7 @@ export default function AuthContextProvider({ children } :{children:React.ReactN
 
   return (
      <AuthContext.Provider
-      value={ user }
+      value={{ user, setUser } }
     >
       {children}
     </AuthContext.Provider>

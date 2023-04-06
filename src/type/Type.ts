@@ -44,10 +44,21 @@ export interface navbarMenu {
   navbarMenu : navbar[]
 }
 
-export interface user{
+export interface users{
   id : string,
   email: string,
   name: string,
   picture: string,
   IsAdmin: boolean,
+}
+
+export interface userInfo{
+  name: string,
+  email: string,
+  agreeIndividual: boolean,
+  agreeMarketing: boolean,
+  phone: string,
+  zipcode: string,
+  detailAddress: string,
+  addAddress:string  
 }

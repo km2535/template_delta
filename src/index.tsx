@@ -11,6 +11,7 @@ import Qna from './pages/qna/Qna';
 import ItemDetail from './pages/itemDetail/ItemDetail';
 import MyPage from './pages/mypage/MyPage';
 import ProtectPage from './components/protectPage/ProtectPage';
+import Logout from './components/logout/Logout';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login/>
+      },
+      {
+        path: "/logout",
+        element: <Logout/>
       },
       {
         path: "/myinfo",
