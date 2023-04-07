@@ -105,8 +105,8 @@ export default function ItemDetail() {
               ))
               }
             </div>
-            <div className={styles.btn}><Button main={true} text='상품구매'  onClick={buyProduct} fontsize='22'/></div>
-            <div className={styles.btn}><Button main={false} text='장바구니'  onClick={putInBocket} fontsize='22'/></div>
+            <div className={styles.btn}><Button main={true} text='상품구매'  onClick={buyProduct} fontsize='22'isLoading={false}/></div>
+            <div className={styles.btn}><Button main={false} text='장바구니'  onClick={putInBocket} fontsize='22'isLoading={false}/></div>
           </div>
         </div>
       </div>

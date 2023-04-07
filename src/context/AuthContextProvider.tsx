@@ -4,10 +4,10 @@ import { googleLogin } from '../api/login/googleLogin';
 import { users } from '../type/Type';
 
 
-const AuthContext = createContext({user : {id:"",email:"",name:"",picture:"",IsAdmin:false},setUser : (user:users)=>{}});
+const AuthContext = createContext({user : {id:"",email:"",name:"",picture:"", addAddress:"", agreeIndividual:false, agreeMarketing:false,detailAddress: "",phone:"",zipcode:"",IsAdmin:"false"},setUser : (user:users)=>{}});
 
 export default function AuthContextProvider({ children } :{children:React.ReactNode}) {
-  const [user, setUser] = useState<users>({id:"",email:"",name:"",picture:"",IsAdmin:false});
+  const [user, setUser] = useState<users>({id:"",email:"",name:"",picture:"", addAddress:"", agreeIndividual:false, agreeMarketing:false,detailAddress: "",phone:"",zipcode:"",IsAdmin:"false"});
   const [googleAccess, setGoogleAccess] = useState<string>("");
   // const [kakaoAccess, setKakaoAccess] = useState<string>("");
   // const [naverAccess, setNaverAccess] = useState<string>("");

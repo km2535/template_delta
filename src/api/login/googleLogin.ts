@@ -12,30 +12,55 @@ export const googleLogin = (accessToken:string, setUser :React.Dispatch<React.Se
     });
 };
 
-const checkAdmin = async (USER:users, setUser : React.Dispatch<React.SetStateAction<users>>) => {
+export const checkAdmin = async (USER: users, setUser: (user: users) => void) => {
   if (USER) {
     const formData = new FormData();
     formData.append("USER_EMAIL", USER.email);
-    await fetch(`${process.env.REACT_APP_API_USER_URL}/checkAdmin.php`, {
+    await fetch(`${process.env.REACT_APP_FETCH_URL}/user/checkAdmin.php`, {
       method: "POST",
       body: formData,
     })
-      .then((data) => data.text())
-      .then((res) =>
-        res
-          ? setUser({
-              id : USER.id,
-              email: USER.email || "",
+      .then((data) => data.json())
+      .then((res:users[]) =>
+        res.length > 0
+          ?
+          res.map((user) => user.IsAdmin === "true" ?  setUser({
+              id : user.id,
+              email: user.email || "",
               name: "관리자",
-              picture: USER?.picture || "",
-              IsAdmin: true,
-            })
+              picture: user.picture || "",
+              zipcode: user.zipcode || "",
+              addAddress: user.addAddress || "",
+              detailAddress: user.detailAddress || "",
+              phone : user.phone || "",
+              agreeIndividual: user.agreeIndividual.toString() === "true" ? true : false,
+              agreeMarketing: user.agreeMarketing.toString() === "true" ? true : false,
+              IsAdmin: user.IsAdmin,
+            }) : setUser({
+              id : user.id,
+              email: user.email || "",
+              name: user.name,
+              picture: user.picture || "",
+              zipcode: user.zipcode || "",
+              addAddress: user.addAddress || "",
+              detailAddress: user.detailAddress || "",
+              phone : user.phone || "",
+              agreeIndividual: user.agreeIndividual.toString() === "true" ? true : false,
+              agreeMarketing: user.agreeMarketing.toString() === "true" ? true : false,
+              IsAdmin: user.IsAdmin,
+            }))
           : setUser({
               id: USER.id,
               email: USER.email || "",
-              name: USER?.name || "",
-              picture: USER?.picture || "",
-              IsAdmin: false,
+              name: USER.name || "",
+              picture: USER.picture || "",
+              zipcode: USER.zipcode || "",
+              addAddress: USER.addAddress || "",
+              detailAddress: USER.detailAddress || "",
+              phone : USER.phone || "",
+              agreeIndividual: USER.agreeIndividual || false,
+              agreeMarketing: USER.agreeMarketing || false,
+              IsAdmin: USER.IsAdmin || "false",
             })
       );
   }

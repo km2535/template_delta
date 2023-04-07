@@ -49,7 +49,13 @@ export interface users{
   email: string,
   name: string,
   picture: string,
-  IsAdmin: boolean,
+  agreeIndividual: boolean,
+  agreeMarketing: boolean,
+  phone: string,
+  zipcode: string,
+  detailAddress: string,
+  addAddress:string  
+  IsAdmin: string,
 }
 
 export interface userInfo{
